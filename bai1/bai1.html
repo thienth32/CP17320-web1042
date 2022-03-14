@@ -1,0 +1,22 @@
+Số thứ 1: <input type="text" id="so1">
+<br>
+Số thứ 2: <input type="text" id="so2">
+<br>
+<button onclick="tinhtong()">Chạy</button>
+<div id="ketqua"></div>
+<script>
+
+    function tinhtong(){
+        // lấy giá trị của thẻ input
+        let theSo1 = document.querySelector('#so1');
+        let theSo2 = document.querySelector('#so2');
+        let theketqua = document.querySelector('#ketqua');
+        let gtriThe1 = parseInt(theSo1.value);
+        let gtriThe2 = parseInt(theSo2.value);
+        alert(gtriThe1+gtriThe2);
+        // tìm số lớn hơn trong 2 số và alert số lớn hơn ra ngoài
+        let soMax = gtriThe1 > gtriThe2 ? gtriThe1 : gtriThe2;
+        
+        theketqua.innerHTML = "Số lớn hơn trong 2 số là: " + soMax;
+    }
+</script>
