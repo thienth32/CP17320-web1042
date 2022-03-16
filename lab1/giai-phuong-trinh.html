@@ -1,0 +1,42 @@
+Số A: <input type="text" id="soa">
+<br>
+Số B: <input type="text" id="sob">
+<br>
+Số C: <input type="text" id="soc">
+<br>
+<button onclick="ptb2()">Kết quả</button>
+<div id="ketqua"></div>
+<script>
+
+    function ptb2() {
+        // 1 lấy giá trị của từng thẻ input ra ngoài
+        let thesoa = document.querySelector('#soa');
+        let thesob = document.querySelector('#sob');
+        let thesoc = document.querySelector('#soc');
+
+        // 2. ép kiểu parseIn(value)
+        const soa = parseInt(thesoa.value);
+        const sob = parseInt(thesob.value);
+        const soc = parseInt(thesoc.value);
+        
+        // 3. Tính delta - bình phương Math.pow(số, mũ)
+        const delta = Math.pow(sob, 2) - (4*soa*soc);
+        
+        let content = "";
+        if(delta < 0){
+            content = "Phương trình vô nghiệm";
+        }else if(delta == 0){
+            const x = -sob/(2*soa);
+            content = `Phương trình có nghiệm kép: x = ${x.toFixed(2)}`;
+        }else{
+            content += "Phương trình có 2 nghiệm: <br>";
+            let x1 = (-sob + Math.sqrt(delta))/(2*soa);
+            let x2 = (-sob - Math.sqrt(delta))/(2*soa);
+            content += `x1 = ${x1.toFixed(2)} <br>`;
+            content += `x2 = ${x2.toFixed(2)}`;
+        }
+
+        document.querySelector('#ketqua').innerHTML = content;
+        
+    }
+</script>
