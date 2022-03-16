@@ -9,9 +9,20 @@ Số thứ 2: <input type="text" id="so2">
     function run() {
         // nhập giá trị của số thứ 1 và thứ 2
         // ngầm định rằng giá trị của số 1 sẽ luôn nhỏ hơn số 2
-        // hiển thị trong thẻ #danhsach danh sách các số trong khoảng
+        // hiển thị trong thẻ #danhsach danh sách các số nguyên tố trong khoảng
         // số thứ 1 đến số thứ 2
-        // Hiển thị trong thẻ #ketqua tổng các số trong khoảng từ số thứ 1
+        // Hiển thị trong thẻ #ketqua tổng các số lẻ trong khoảng từ số thứ 1
         // đến số thứ 2
+    }
+
+    function checkNguyenTo(num){
+        let flag = true;
+        for (let i = 2; i < num-1; i++) {
+            if(num % i == 0){
+                flag = false;
+                break;
+            }
+        }
+        return flag;
     }
 </script>
