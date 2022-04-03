@@ -1,0 +1,19 @@
+<h2></h2>
+<ul>
+</ul>
+
+<script>
+    // document.querySelector('ul').innerHTML = `<li>1</li>
+    // <li>8</li>
+    // <li>12</li>
+    // <li>54</li>`;
+    let arr = ["Trang chủ", "Tin tức", 12, 54, 63, 100];
+    let arr1 = arr.filter(function(item) {
+        return typeof(item) == "string";
+    });
+
+    let arr2 = arr1.map(function(item){
+        return `<li><a href="https://www.google.com/">${item}</a></li>`;
+    });
+    document.querySelector('ul').innerHTML = arr2.join('');
+</script>

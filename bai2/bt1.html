@@ -1,0 +1,23 @@
+<input type="text" id="target">
+<button onclick="bai1()">Click me</button>
+<script>
+    function bai1(){
+        // 1. lấy dữ liệu từ thẻ input
+        let inputValue = document.querySelector('#target').value;
+        // tạo biến đếm  = 0
+        let count = 0;
+        // 2. chạy vòng lặp qua các phần tử trong chuỗi
+        for (let i = 0; i < inputValue.length; i++) {
+            // 2.2 kiểm tra từng phần tử xem có phải số hay không
+            if(isNaN(inputValue[i]) == false){
+                // nếu là số thì biến đêm ++
+                count++;
+            }
+        }
+        console.log(`Trong chuỗi có ${count} ký tự là số`);
+        while(inputValue.includes('1')){
+            inputValue = inputValue.replace('1', 'a');
+        }
+        console.log(inputValue);
+    }
+</script>

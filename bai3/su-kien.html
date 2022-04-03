@@ -1,0 +1,49 @@
+<body onload="console.log(7)">
+
+    <img src="https://tranhsondaudepviet.com/wp-content/uploads/2020/09/tranh-phong-canh-dep.jpeg" alt="">
+
+<div onmouseover="changeColor(this)" onmouseout="backColor(this)" style="background-color: green; width: 100px; height: 100px;"></div>
+<input onselect="console.log(5)" onfocus="console.log(3)" onblur="console.log(4)" type="text" onchange="console.log(1)">
+<input onselect="console.log(5)" onfocus="console.log(3)" type="checkbox" onchange="console.log(2)" id="">
+<select name="" onselect="console.log(5)" id="">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+</select>
+<p onclick="this.style.color = 'purple'" onselect="console.log(5)">chuyển màu</p>
+<script>
+
+    // click
+    // dbclick
+    // mouseover
+    // mouseout
+
+    // keyup
+    // keydown
+    // keypress
+
+    // input
+    // change
+    // focus
+    // blur
+    // submit
+    // select
+
+    // load
+
+    // 1. áp dụng thẻ nào
+    // 2. xảy ra khi nào
+
+
+    function changeColor(element){
+        element.style.background = "red";
+    }
+
+    function backColor(element){
+        element.style.background = 'green';
+    }
+    // trong code html (trong các thẻ)
+    // thì được phép gọi các thuộc tính (bắt đầu bằng từ on)
+    // là các sự kiện
+</script>
+</body>

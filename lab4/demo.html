@@ -1,0 +1,55 @@
+<table>
+    <thead>
+        <th>Mã sản phẩm</th>
+        <th>Tên sản phẩm</th>
+        <th>Giá</th>
+        <th>Số lượng</th>
+        <th>Cập nhật</th>
+    </thead>
+    <tbody>
+        
+    </tbody>
+</table>
+<script src="./data.js"></script>
+<script>
+    generateTable();
+    function generateTable(){
+        let content = '';
+        for (let item of products) {
+            content += ` <tr>
+                                <td>${item.id}</td>
+                                <td>${item.name}</td>
+                                <td>${item.price}</td>
+                                <td>${item.quantity}</td>
+                                <td>
+                                    <button onclick="updateQuantity(${item.id}, true)">+ 1</button>      
+                                    <button onclick="updateQuantity(${item.id}, false)">- 1</button>      
+                                </td>
+                            </tr>`;        
+        }
+        document.querySelector('tbody').innerHTML = content;
+    }
+
+    function updateQuantity(itemId, tang){
+        // 1. tìm đc index của phần tử đang đc bấm
+        let index = -1;
+        for (let i = 0; i < products.length; i++) {
+            if(products[i].id == itemId){
+                index = i;
+                break;
+            }
+        }
+        // let index = products.findIndex(function(item){
+        //     return item.id == itemId;
+        // });
+        
+        // 2. dựa vào biến tang để tăng hoặc giảm số lượng của phần tử đã tìm đc
+        // index
+        if(tang == true){
+            products[index].quantity++;
+        }else{
+            products[index].quantity--;
+        }
+        generateTable();
+    }
+</script>

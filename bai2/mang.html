@@ -1,0 +1,72 @@
+<script>
+    /**
+     * mảng là tập hợp các phần tử (không cần phải cùng kiểu dữ liệu)
+     * các phần tử được xác định bởi số index
+     * cú pháp: let arr = [];
+     */
+    let arr = ['something', 108, 5.8, false, [3, 4], {id: 1, name: 'aaa'}];
+    // console.log(arr);
+    /**
+     * lấy các phần tử của mảng ra thì làm thế nào
+     * thay đổi giá trị của phần tử trong mảng thì làm thế nào
+     */
+    //  console.log(arr[4][1]);
+    
+    // .length
+    arr = [];
+    // .push - thêm 1 phần tử vào cuối mảng
+    arr.push(10);
+    arr.push('test');
+    arr.push(10);
+    // .pop - loại bỏ phần tử ở cuối mảng
+    // .unshift - thêm 1 phần tử ở đầu mảng
+    arr.unshift(101);
+    // console.log(arr);
+    // .shift - loại bỏ 1 phần tử ở đầu mảng
+
+    // .includes - kiểm tra 1 phần tử có trong mảng hay không => true/false
+    // .indexOf - kiểm tra 1 phần tử có trong mảng hay không => index
+    // .lastIndexOf - kiểm tra phần tử xuất hiện cuối cùng ở index số bao nhiêu
+    // .find - trả về phần tử đúng đầu tiên
+    let x = arr.find(function(item) {
+        return item == 11;
+    });
+    // console.log(x);
+
+    // vòng lặp
+    // while(){}
+    // do{}while()
+    
+    let arr5 = [1, 4, 6, 8, 6, 9, 6];
+    arr5[5] = 100;
+    // console.log(arr5);
+    // for (let i = 0; i < arr5.length; i++) {
+    //     if(arr5[i] != undefined){
+    //         console.log(arr5[i]);
+    //     }
+    // }
+    // for (let key in arr5) {
+    //     console.log(key);
+    // }
+    // for (let item of arr5) {
+        // console.log(item);
+    // }
+    
+    // .forEach - lặp qua các phần tử trong mảng
+    let count = 0;
+    arr5.forEach(function(item, index){
+        if(item == 6){
+            count++;
+        }
+    });
+    console.log(count);
+    // .map - từ mảng gốc sinh ra 1 mảng mới chứa các phần tử đã đc biến đổi từ phần tử của mảng gốc
+    // .filter - lọc trong mảng gốc lấy ra 1 mảng mới chứa các phần tử thỏa mãn điều kiện
+
+    // delete
+    // .splice
+    // .join
+    // .reverse
+
+
+</script>

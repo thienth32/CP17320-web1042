@@ -1,0 +1,72 @@
+<script>
+
+    // các loại kiểu dữ liệu
+    // số
+    let x = 5;
+    let b = 5.9;
+    // isNaN() => true => 0 phải là số | false => có thể là số
+    // Math
+    // Math.floor()
+    // Math.ceil()
+    // Math.sqrt()
+    // Math.pow(số, mũ)
+    // Math.random() => số ngẫu nhiên khoảng 0 => 1
+    // tên biến.toFixed(x) => x số đứng sau dấu phẩy động
+    // parseInt(giá trị) 
+    // parseFloat(giá trị)
+
+    // Nhập 1 biến a = prompt()
+    // let a = prompt("nhập giá trị");
+    // // kiểm tra xem giá trị vừa nhập có phải là số hay không, 
+    // // nếu là số thì tính tổng các số chạy từ 1 => số vừa nhập
+    // if(isNaN(a) == true){
+    //     alert('Giá trị vừa nhập không phải là số');
+    // }else{
+    //     let tong = 0;
+    //     for (let i = 1; i <= a; i++) {
+    //         tong+=i;
+    //     }
+    //     alert('Tổng giá trị từ 1 đến ' + a + " = " + tong);
+    // }
+
+    // boolean
+    let t = true;
+    let f = false;
+    // thủ thuật cắm cờ
+    // tìm số nguyên tố
+    let z = parseInt(prompt("nhập số"));
+    // cho 1 biến mặc định = true (mặc định số cần tìm là số ngto)
+    let flag = true;
+    // chạy vòng lặp từ 2 => chính nó trừ 1
+    for (let i = 0; i < z; i++) {
+        // trong vòng lặp kiểm tra xem số đang xét có chia hết cho i hay không
+        if(z%i==0){
+            // nếu chia chia hết thì chuyển giá trị của biến mặc định về false
+            flag = false;
+            // và thoát khỏi vòng lặp
+            break;
+        }
+    }
+    // nếu gia tri mặc định == true => là số ngto nếu không thì k phải
+    if(flag == true){
+        alert("số vừa nhập là số nguyên tố")
+    }else{
+        alert("Số vừa nhập không phải số nguyên tố")
+    }
+
+    // nhập 1 số w từ hàm prompt
+    // kiểm tra trong các số từ 1 => w có bao nhiêu số chia hết cho 3, chia hết cho 5, chia 
+    // hết cho cả 3 và 5
+
+    // chuỗi
+    // có 3 cách định nghĩa 1 biến là chuỗi: '', "", `` (string template)
+    let o = 15;
+    let str = 'giá trị của biến o = ' + o;
+    let str2 = `giá trị của biến o = ${o}`;
+    console.log(str, str2);
+    
+
+
+    // mảng
+    // đối tượng
+</script>

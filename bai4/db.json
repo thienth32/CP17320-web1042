@@ -1,0 +1,10 @@
+{
+  "accounts": [
+    {
+      "email": "thienth@fpt.edu.vn",
+      "password": "123456",
+      "url": "http://127.0.0.1:5500/bai4/test.html",
+      "id": 1
+    }
+  ]
+}

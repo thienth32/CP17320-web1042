@@ -1,0 +1,42 @@
+<script>
+
+    // viết hàm sinh ra 1 mảng ngẫu nhiên trong 1 khoảng từ 0 cho đến
+    // 1 số truyền vào => return 1 array
+    function array_generate(element_amount, maximum){
+        let arr = [];
+        while(arr.length < element_amount){
+            let randomNumber = Math.floor(Math.random() * (maximum+1));
+            arr.push(randomNumber);
+        }
+        return arr;
+    }
+
+    let arr2 = array_generate(100, 5);
+    console.log(arr2);
+
+    // viết hàm kiểm tra số nguyên tố
+    // hàm nhận 1 tham số
+    // sau khi thực hiện kiểm tra
+    // nếu số nhập vào là số nguyên tố thì trả về true
+    // nếu không thì trả về false
+    
+    function check_so_ngto(input){
+        if(input < 1){
+            return false;
+        }else if(input < 3){
+            return true;
+        }
+
+        let flag = true;
+        for (let i = 2; i < input-1; i++) {
+            if(input % i == 0){
+                flag = false;
+                break;
+            }
+        }
+        return flag;
+    }
+
+    let x = parseInt(prompt('Nhập một số bất kỳ'));
+    console.log(check_so_ngto(x));
+</script>

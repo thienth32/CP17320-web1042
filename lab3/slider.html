@@ -1,0 +1,19 @@
+<img src="https://cdn.tgdd.vn//GameApp/1393172//pokemon-la-gi-top-5-game-pokemon-hay-nhat-moi-thoi-dai-800x450.jpg" height="300" id="target">
+<button onclick="back()">Back</button>
+<button onclick="next()">Next</button>
+<script>
+    var currentIndex = 0;
+    var imgArr = [
+        "https://cdn.tgdd.vn//GameApp/1393172//pokemon-la-gi-top-5-game-pokemon-hay-nhat-moi-thoi-dai-800x450.jpg",
+        "https://game8.vn/media/202111/images/bao/anniversaryposter2019.jpg",
+        "https://img.redbull.com/images/c_fill,w_1200,h_630,g_auto,f_auto,q_auto/redbullcom/2016/09/20/1331818966444_2/pok%C3%A9mon-super-mystery-dungeon",
+        "https://issf.vn/choi-game-pokemon-online-3d/imager_4419.jpg"
+    ];
+    function next(){
+        currentIndex++;
+        if(currentIndex >= imgArr.length){
+            currentIndex = 0;
+        }
+        document.querySelector('#target').src = imgArr[currentIndex];
+    }
+</script>

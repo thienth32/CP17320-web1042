@@ -1,0 +1,32 @@
+
+<script>
+    let str = "fpt polytechnic";
+    // đn ra 1 object mới trong js
+    let long = {
+        name: "Nguyễn Hoàng Long",
+        age: 19,
+        run: function(){
+            return `Tôi tên là: ${this.name}, tôi đang chạy`;
+        }
+    };
+    // console.log(long.run());
+    function SinhVien(ipname, ipage){
+        this.name = ipname;
+        this.age = ipage;
+        this.run = function(){
+            return `Tôi tên là: ${this.name}, tôi đang chạy`
+        }
+    }
+    let thu = new SinhVien("Nguyễn Thị Thu", 19);
+    let tung = new SinhVien("Lê Văn Tùng", 20);
+    
+    // cách 3
+    let tien = new Object();
+    tien.name = "Nguyễn Hoàng Tiến";
+    tien.age = 28;
+    tien.eat = function(){
+        return `Tôi tên là ${this.name}, tôi đang ăn`;
+    }
+    console.log(tien);
+
+</script>

@@ -1,0 +1,50 @@
+<body onload="generateList()">
+    
+
+    <ul id="danh_sach">
+
+    </ul>
+    <script>
+        // mở bài asm1 bài 3 
+        // tạo ra danh sách object gồm các thuộc tính
+        // mã sản phẩm, tên sản phẩm, số lượng, đơn giá
+        // có các phương thức thanhtien() => return số lượng * đơn gia
+        // tạo 5 object theo các sản phẩm có trong bài asm1 - bài 3
+        function SanPham(ipma, ipten, ipdongia, ipsoluong){
+            this.ma = ipma;
+            this.ten = ipten;
+            this.dongia = ipdongia;
+            this.soluong = ipsoluong;
+            this.thanhtien = function(){
+                return this.dongia*this.soluong;
+            }
+        }
+        let iphone = new SanPham(1, "iPhone 9", 700, 1);
+        let samsung = new SanPham(2, "Samsung", 400, 0);
+        let xperia = new SanPham(3, "Sony Xperia", 450, 10);
+        let nokia = new SanPham(4, "Nokia", 100, 150);
+        let moto = new SanPham(5, "Motorola", 180, 1);
+        let arr = [iphone, samsung, xperia, nokia, moto];
+
+        function tangdan(){
+            for (let i = 0; i < arr.length-1; i++) {
+                for (let j = i+1; j < arr.length; j++) {
+                    if(arr[i].dongia > arr[j].dongia){
+                        let tmp = arr[i];
+                        arr[i] = arr[j];
+                        arr[j] = tmp;
+                    }
+                }
+            }
+            generateList();
+        }
+
+        function generateList(){
+            let content = "";
+            for (const item of arr) {
+                content += `<li>${item.ten} - ${item.dongia}</li>`;
+            }
+            document.querySelector('#danh_sach').innerHTML = content;
+        }
+    </script>
+</body>
