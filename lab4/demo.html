@@ -24,6 +24,7 @@
                                 <td>
                                     <button onclick="updateQuantity(${item.id}, true)">+ 1</button>      
                                     <button onclick="updateQuantity(${item.id}, false)">- 1</button>      
+                                    <button onclick="remove(${item.id})">Xóa</button>      
                                 </td>
                             </tr>`;        
         }
@@ -50,6 +51,21 @@
         }else{
             products[index].quantity--;
         }
+        generateTable();
+    }
+
+    function remove(itemId){
+        // let index = -1;
+        // for (let i = 0; i < products.length; i++) {
+        //     if(products[i].id == itemId){
+        //         index = i;
+        //         break;
+        //     }
+        // }
+        // products.splice(index, 1);
+        products = products.filter(function(item){
+            return item.id != itemId;
+        });
         generateTable();
     }
 </script>

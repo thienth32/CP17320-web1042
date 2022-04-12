@@ -1,0 +1,24 @@
+<p>fpt poly 1</p>
+<p id="target">fpt poly 2</p>
+<p class="txt-green">fpt poly 3</p>
+<p class="txt-green">fpt poly 4</p>
+<p>fpt poly 5</p>
+<script>
+    // xác định 1 thẻ => trả về 1 object
+    // 1. dựa vào selector
+    // 2. dựa vào id của thẻ
+    document.querySelector('p').style.color = 'red';
+    document.querySelector('#target').style.color = 'blue';
+    document.querySelector('.txt-green').style.color = 'green';
+    document.getElementById('target').style.background = '#ccc';
+    // xác định nhiều thẻ => trả về mảng
+    // let pTagsList = document.querySelectorAll('p');
+    // let pTagsList = document.getElementsByTagName('p');
+    let pTagsList = document.getElementsByClassName('txt-green');
+    // pTagsList.forEach(function(element) {
+    //     element.style.fontStyle = 'italic';
+    // });
+    for (let i = 0; i < pTagsList.length; i++) {
+        pTagsList[i].style.fontSize = 40;
+    }
+</script>

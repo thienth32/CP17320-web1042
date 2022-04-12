@@ -1,0 +1,53 @@
+<table border="1">
+    <tr>
+        <td>
+            <input type="checkbox" id="cb_1" onclick="setValueInput(1)">
+        </td>
+        <td>
+            <input type="text" id="text_1" onkeyup="checkTotal(1)">
+        </td>
+        <td>
+            <input type="number" id="num_1" value="0" onkeyup="checkTotal(1)">
+        </td>
+        <td id="total_1">
+            
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="checkbox" id="cb_2" onclick="setValueInput(2)">
+        </td>
+        <td>
+            <input type="text" id="text_2"  onkeyup="checkTotal(2)">
+        </td>
+        <td>
+            <input type="number" id="num_2" value="0"  onkeyup="checkTotal(2)">
+        </td>
+        <td id="total_2">
+            
+        </td>
+    </tr>
+    
+</table>
+<script>
+    // điền giá vào ô input text
+    // điền số lượng vào ô input number
+    // bất kỳ thay đổi nào trong 2 thẻ này thì đều nhân giá & số lượng với nhau
+    // => tổng tiền cho mỗi dòng và điền vào ô td cùng dòng
+    function checkTotal(masp){
+        let thePrice = document.querySelector('#text_' + masp);
+        let theQuantity = document.querySelector('#num_' + masp);
+        let theTdTotal = document.querySelector('#total_' + masp);
+        let total = Number(thePrice.value) * Number(theQuantity.value);
+        theTdTotal.innerText = total;
+    }
+    function setValueInput(masp){
+        let theInputText = document.querySelector('#text_' + masp);
+        let theCheckbox = document.querySelector('#cb_' + masp);
+        if(theCheckbox.checked == true){
+            theInputText.disabled = true;
+        }else{
+            theInputText.disabled = false;
+        }
+    }   
+</script>

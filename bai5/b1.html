@@ -1,0 +1,83 @@
+<p>the so 1</p>
+<p id="theP">the so 2</p>
+<p id="theP">the so 3</p>
+<p>the so 4</p>
+
+
+<table border="1">
+    <thead>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Address</th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>Nguyễn Văn A</td>
+            <td>Hà Nội</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Nguyễn Văn B</td>
+            <td>Hà Nam</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Nguyễn Văn B</td>
+            <td>Hà Nam</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Nguyễn Văn B</td>
+            <td>Hà Nam</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Nguyễn Văn B</td>
+            <td>Hà Nam</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Nguyễn Văn B</td>
+            <td>Hà Nam</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Nguyễn Văn B</td>
+            <td>Hà Nam</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Nguyễn Văn B</td>
+            <td>Hà Nam</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Nguyễn Văn B</td>
+            <td>Hà Nam</td>
+        </tr>
+
+    </tbody>
+</table>
+
+
+<script>
+    document.querySelector('p').style.color = "green";
+    document.getElementById('theP').style.color = 'red';
+    // let arrTag = document.querySelectorAll("#theP");
+    let arrTag = document.getElementsByTagName('p');
+    console.log(arrTag);
+    for (const item of arrTag) {
+        item.style.background = "#ccc";
+    }
+
+    let trTags = document.querySelectorAll('tr');
+    // trTags[2].style.background = '#ccc';
+
+    // bôi màu tất cả các thẻ tr ở số chẵn
+    for (let i = 1; i < trTags.length; i++) {
+        if(i%2==0){
+            trTags[i].style.background = '#ccc';
+        }
+    }
+</script>

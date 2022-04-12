@@ -1,0 +1,41 @@
+<body>
+    <table border="1"></table>
+</body>
+<script>
+    // js cần tương tác với các thẻ html ở trên website 
+    //  => công cụ có sẵn là biến: document
+    // + tạo mới 1 thẻ
+    // + cập nhật các thông số (thuộc tính, hành động) của thẻ
+    // + Xóa 1 thẻ
+    // + xác định 1 hoặc nhiều thẻ trên code html (selector, id, classname, tagname,...)
+    // vd: tạo thẻ mới
+    let pTag = document.createElement('P');
+    pTag.innerText = "Hello world!";
+    pTag.addEventListener('click', function(){
+        this.style.background = 'green';
+    })
+    let bodyTag = document.querySelector('body');
+    let tableTag = document.querySelector('table');
+    // bodyTag.append(pTag);
+    // tạo ra 1 dòng trong thẻ table
+    let trTag = document.createElement('tr');
+    let tdId = document.createElement('td');
+    tdId.innerText = 1;
+    let tdName = document.createElement('td');
+    tdName.innerText = "iPhone 13 promax";
+    let tdPrice = document.createElement('td');
+    tdPrice.innerText = 10000;
+    let tdQuantity = document.createElement('td');
+    tdQuantity.innerText = 5;
+    let tdTotal = document.createElement('td');
+    tdTotal.innerText = Number(tdPrice.innerText) * Number(tdQuantity.innerText);
+    trTag.append(tdId);
+    trTag.append(tdName);
+    trTag.append(tdPrice);
+    trTag.append(tdQuantity);
+    trTag.append(tdTotal);
+    tableTag.append(trTag);
+    trTag.addEventListener('click', function(){
+        this.remove();
+    })
+</script>
