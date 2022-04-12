@@ -1,0 +1,47 @@
+<style>
+    #target{
+        width: 100px;
+        height: 100px;
+        border: 1px solid #000;
+        display: inline-block;
+    }
+    #box_color{
+        display: inline-block;
+    }
+</style>
+<div id="target">
+
+</div>
+<div id="box_color">
+    <input class="cb" type="checkbox" value="red"> Màu đỏ
+    <br>
+    <input class="cb" type="checkbox" value="blue"> Màu xanh da trời
+    <br>
+    <input class="cb" type="checkbox" value="green"> Màu xanh lá cây
+    <br>
+    <input class="cb" type="checkbox" value="purple"> Màu tím
+    <br>
+</div>
+<script>
+
+    // 1. chỉ đc phép tick 1 thẻ checkbox duy nhất trên trang
+    // - xác định tất cả các thẻ input checkbox trên trang
+    // - định nghĩa sự kiện click cho từng thẻ 1
+    // let cbList = document.getElementsByClassName('cb');
+    let cbList = document.querySelectorAll('[type="checkbox"]');
+    let divTag = document.querySelector('#target');
+    let selectedColor = "";
+    for (const cb of cbList) {
+        cb.onclick = function(){
+            // lấy ra giá trị của thẻ vừa được click
+            // lấy ra trạng thái tick/không tick của thẻ
+            if(this.checked == true){
+                selectedColor = this.value;
+            }
+            divTag.style.background = selectedColor;
+            // if(this.value != selectedColor){
+            //     this.checked = false;
+            // }
+        }
+    }
+</script>

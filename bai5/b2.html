@@ -1,0 +1,40 @@
+<style>
+    div#target{
+        width: 100px;
+        height: 100px;
+        border: 1px dashed #000;
+    }
+</style>
+<div id="target" style="background: red;">
+</div>
+<script>
+    // có 4 màu: red, green, purple, aqua
+    // sửa code để mỗi lần click thì thẻ div sẽ lần lượt đổi màu theo thứ tự
+    // click chuột vào thẻ div thì đổi màu xanh/đỏ
+    // 1. xác định thẻ
+    let target = document.getElementById('target');
+    // 2. định nghĩa sự kiện click
+    let colors = ['red', 'green', 'purple', 'aqua', 'blue', 'white'];
+    let index = 0;
+    target.onclick = function(){
+        // 3. thay đổi màu của thẻ
+        index++;
+        if(index >= colors.length){
+            index = 0;
+        }
+        this.style.background = colors[index];
+        /**
+        if(this.style.background == 'red'){
+            this.style.background = 'green';
+        }else if(this.style.background == 'green'){
+            this.style.background = 'purple';
+        }else if(this.style.background == 'purple'){
+            this.style.background = 'aqua';
+        }else{
+            this.style.background = 'red';
+        }
+        */
+        
+    }
+    
+</script>
