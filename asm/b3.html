@@ -40,20 +40,24 @@
             noidung += `
                 <tr>
                     <td>
-                        <input type="checkbox" value="${sp.ma}" class="cbCon">
+                        <input ${sp.trangthai == true ? "checked" : ""} type="checkbox" onchange="capnhattrangthai(${sp.ma})" value="${sp.ma}" class="cbCon">
                     </td>
                     <td>${sp.ten}</td>
                     <td>
                         ${sp.gia}
                     </td>
                     <td>
-                        <input type="number" id="gia_${sp.ma}" value="${sp.soluong}" disabled />
+                        <input type="number" id="gia_${sp.ma}" value="${sp.soluong}" ${sp.trangthai == true ? "" : "disabled"} />
                     </td>
                     <td>${sp.gia * sp.soluong}</td>
                 </tr>
             `;
         }
         document.querySelector('tbody').innerHTML = noidung;
+    }
+
+    function capnhattrangthai(idsp){
+        console.log(idsp);
     }
 
     taobang();

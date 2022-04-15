@@ -11,7 +11,7 @@ var sanpham = [
         ten: "Samsung",
         gia: 400,
         soluong: 0,
-        trangthai: false
+        trangthai: true
     },
     {
         ma: 3,
