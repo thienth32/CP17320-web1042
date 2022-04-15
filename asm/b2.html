@@ -1,0 +1,63 @@
+<style>
+    .text-err{
+        color: red;
+    }
+</style>
+<div>
+    <label for="">Mã sinh viên</label>
+    <input type="text" id="masv">
+    <br>
+    <span id="masverr" class="text-err"></span>
+</div>
+<div>
+    <label for="">Họ và tên</label>
+    <input type="text" id="hovaten">
+    <br>
+    <span id="hovatenerr" class="text-err"></span>
+</div>
+<div>
+    <button onclick="validate()">Đăng ký</button>
+</div>
+<script>
+    function validate(){
+        // mã sinh viên
+        let masverr = checkmasv();
+        document.querySelector('#masverr').innerText = masverr;
+        let hovatenerr = checkhovaten();
+        document.querySelector('#hovatenerr').innerText = hovatenerr;
+
+    }
+    function checkmasv(){
+        // 1. không đc để trống
+        let value = document.querySelector('#masv').value.trim();
+        if(value.length  == 0){
+            return "Không để trống mã sinh viên";
+        }
+        // 2. phải có 7 ký tự
+        if(value.length  != 7){
+            return "Mã sinh viên cần có 7 ký tự";
+        }
+        // 3. phải bắt đầu bằng PH | PS | PD | PC | PT (startsWith)
+        // 4. 5 ký tự cuối cùng phải là số (isNaN)
+
+        return "";
+    }
+
+    function checkhovaten(){
+        // 1. không để trống
+        // 2. có ít nhất 2 từ
+        let value = document.querySelector('#hovaten').value.trim();
+        if(value.length  == 0){
+            return "Không để trống họ và tên";
+        }
+
+        return "";
+    }
+
+    function checkemail(){
+        // 1. không để trống
+        // 2. không bắt đầu và kết thúc bằng @ (startsWith & endsWith)
+        // 3. phải có 1 ký tự @ ở trong value (không nhiều hoặc ít hơn) 
+        
+    }
+</script>
